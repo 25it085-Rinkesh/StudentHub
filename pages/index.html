@@ -1,70 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>StudentHub - Home</title>
-    </head>
-    <body>
-        <header>
-            <h1>StudentHub</h1>
-            <p>Your Digital Campus Portal</p>
-        </header>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="register.html">Register</a>
-            <a href="login.html">Login</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="events.html">Events</a>
-            <a href="profile.html">Profile</a>
-            <a href="contact.html">Contact</a>
-            <a href="admin.html">Admin</a>
-            <a href="faq.html">FAQ</a>
-            <a href="feedback.html">Feedback</a>
-        </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <main>
-            <section>
+    <title>StudentHub - Home</title>
 
-                <h2>Welcome to StudentHub</h2>
-                
+    <link rel="icon"
+          type="image/png"
+          href="../images/favstudenticon.png">
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         Header
+         ========================= -->
+
+    <header>
+
+        <img src="../images/logo.png"
+             alt="StudentHub Logo">
+
+        <h1>StudentHub</h1>
+
+        <p>Digital Campus Portal</p>
+
+    </header>
+
+
+    <!-- =========================
+         Navigation
+         ========================= -->
+
+    <button id="menuBtn">☰ Menu</button>
+
+    <nav id="mainMenu">
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         Main Content
+         ========================= -->
+
+    <main>
+
+        <!-- Notification -->
+
+        <div id="notification">
+
+            <span>📢 Workshop Registration is Open!</span>
+
+            <button id="closeBtn">✖</button>
+
+        </div>
+
+
+        <!-- =========================
+             Welcome Section
+             ========================= -->
+
+        <section>
+
+            <h2 id="welcomeHeading">
+                Welcome to StudentHub
+            </h2>
+
+            <div class="welcome-buttons">
+
+                <button id="changeBtn">
+                    Change Heading
+                </button>
+
+                <button id="themeBtn">
+                    Dark Mode
+                </button>
+
+                <button id="openModalBtn">
+                    Open Announcement
+                </button>
+
+            </div>
+
+
+            <!-- Image Slider -->
+
+            <figure>
+
+                <img id="sliderImage"
+                     src="../images/campus1.jpg"
+                     alt="StudentHub Campus Name">
+
+                <figcaption id="sliderCaption">
+                    StudentHub Campus
+                </figcaption>
+
+            </figure>
+
+
+            <div class="slider-buttons">
+
+                <button id="previousBtn">
+                    Previous
+                </button>
+
+                <button id="nextBtn">
+                    Next
+                </button>
+
+            </div>
+
+
+            <p>
+                StudentHub is a centralized digital platform developed
+                to help students access academic information, register
+                for events, manage their profiles, and stay updated
+                with campus activities.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             FAQ Section
+             ========================= -->
+
+        <section id="faq">
+
+            <h2>Frequently Asked Questions</h2>
+
+
+            <div class="faq-item">
+
+                <button id="faqBtn1">
+                    What is StudentHub?
+                </button>
+
+                <div id="faqAnswer1">
+                    StudentHub is a web portal where students can access
+                    study materials, notices, events, internship updates,
+                    and academic resources.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button id="faqBtn2">
+                    How can I register for events?
+                </button>
+
+                <div id="faqAnswer2">
+                    Students can register through the Events page
+                    by filling the registration form.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button id="faqBtn3">
+                    Where can I download study materials?
+                </button>
+
+                <div id="faqAnswer3">
+                    Study materials are available in the Resources section.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             Upcoming Workshop
+             ========================= -->
+
+        <section id="workshop">
+
+            <h2>Upcoming Workshop</h2>
+
+            <article class="workshop-card">
+
+                <h3>
+                    Web Development Workshop
+                </h3>
+
                 <p>
-                    StudentHub is a digital platform where students can register, participants in events, manage profile, and access academic information.
+                    A Web Development Workshop will be conducted on
+                    <time datetime="2026-07-30">
+                        30 July 2026
+                    </time>.
                 </p>
 
-            </section>
-
-            <article>
-
-                <h3>Upcoming Workshop</h3>
-
                 <p>
-                    Aweb Development Workshop will be conducted next week.
+                    Students will learn HTML5, CSS3, JavaScript,
+                    Git &amp; GitHub, and Responsive Web Design.
                 </p>
+
+                <button id="registerBtn">
+                    Register Now
+                </button>
 
             </article>
 
-            <aside>
+        </section>
 
-                <h3>Latest Notices</h3>
 
-                <ul>
-        
-                    <li>Lab Submisson on Friday</li>
-                    <li>Workshop Registration Open</li>
-                    <li>Hackthon Next Month</li>
-                    
-                </ul>
+        <!-- =========================
+             Latest Notices
+             ========================= -->
 
-            </aside>
+        <section>
 
-        </main>
+            <h2>Latest Notices</h2>
 
-        <footer>
-            <p>&copy; 2026 studentHub. All Rights Reserved.</p>
-        </footer>
+            <ul>
 
-    </body>
+                <li>Lab Submission on Friday</li>
+
+                <li>Workshop Registration Open</li>
+
+                <li>Hackathon Registration Starts Next Month</li>
+
+                <li>
+                    Summer Internship Evaluation Schedule Released
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- =========================
+             Why Choose StudentHub
+             ========================= -->
+
+        <section>
+
+            <h2>Why Choose StudentHub?</h2>
+
+            <p>
+                StudentHub provides a centralized platform that
+                simplifies campus life by bringing academic services,
+                event management, profile management, notices, and
+                communication together in one place.
+            </p>
+
+            <ul>
+
+                <li>📚 Centralized Academic Information</li>
+
+                <li>🎉 Easy Event Registration</li>
+
+                <li>🔔 Real-Time Campus Notices</li>
+
+                <li>👤 Student Profile Management</li>
+
+                <li>📅 Academic Calendar Access</li>
+
+                <li>💻 User-Friendly Interface</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- =========================
+             Quick Links
+             ========================= -->
+
+        <aside>
+
+            <h2>Quick Links</h2>
+
+            <ul>
+
+                <li>
+                    <a href="#">Library Portal</a>
+                </li>
+
+                <li>
+                    <a href="#">ERP Login</a>
+                </li>
+
+                <li>
+                    <a href="#">Examination Portal</a>
+                </li>
+
+                <li>
+                    <a href="#">Academic Calendar</a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+    </main>
+
+
+    <!-- =========================
+         Announcement Modal
+         ========================= -->
+
+    <div id="announcementModal"
+         class="modal">
+
+        <div class="modal-content">
+
+            <span id="closeModal">&times;</span>
+
+            <h2>
+                📢 StudentHub Announcement
+            </h2>
+
+            <p>
+                Welcome to StudentHub! The Web Development Workshop
+                registration is now open. Register before the last
+                date to secure your seat.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         Footer
+         ========================= -->
+
+    <footer>
+
+        <address>
+
+            StudentHub Portal<br>
+            CHARUSAT University<br>
+            Changa, Anand, Gujarat<br>
+            📧 studenthub@charusat.ac.in<br>
+            ☎ +91-2697-265011
+
+        </address>
+
+        <p>
+            © 2026 StudentHub
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="../js/script.js"></script>
+
+</body>
+
 </html>
