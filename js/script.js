@@ -53,6 +53,7 @@ const mainMenu = document.getElementById("mainMenu");
 if (menuButton && mainMenu) {
 
     menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-controls", "mainMenu");
 
     menuButton.addEventListener("click", function () {
 
@@ -212,10 +213,20 @@ const faqButtons =
 
 faqButtons.forEach(function (button) {
 
+    const answer = button.nextElementSibling;
+
     button.setAttribute(
         "aria-expanded",
         "false"
     );
+
+    // Accessibility: connect button to its answer
+    if (answer && answer.id) {
+        button.setAttribute(
+            "aria-controls",
+            answer.id
+        );
+    }
 
     button.addEventListener("click", function () {
 
@@ -275,19 +286,37 @@ const announcementModal =
 const closeModalButton =
     document.getElementById("closeModal");
 
+let modalOpener = null;
 
+
+// Open Modal
 function openAnnouncement() {
 
     if (!announcementModal) {
         return;
     }
 
+    // Remember the element that opened the modal
+    modalOpener = document.activeElement;
+
     announcementModal.style.display = "block";
 
+    // Accessibility
+    announcementModal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
     document.body.style.overflow = "hidden";
+
+    // Move keyboard focus to close button
+    if (closeModalButton) {
+        closeModalButton.focus();
+    }
 }
 
 
+// Close Modal
 function closeAnnouncement() {
 
     if (!announcementModal) {
@@ -296,10 +325,25 @@ function closeAnnouncement() {
 
     announcementModal.style.display = "none";
 
+    // Accessibility
+    announcementModal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
     document.body.style.overflow = "";
+
+    // Return focus to the element that opened the modal
+    if (
+        modalOpener &&
+        typeof modalOpener.focus === "function"
+    ) {
+        modalOpener.focus();
+    }
 }
 
 
+// Open modal button
 if (openModalButton) {
 
     openModalButton.addEventListener(
@@ -309,6 +353,7 @@ if (openModalButton) {
 }
 
 
+// Close modal button
 if (closeModalButton) {
 
     closeModalButton.addEventListener(

@@ -636,6 +636,9 @@ aside a:hover {
 
 #closeModal {
     position: absolute;
+    border: none;
+    background: transparent;
+    padding: 4px;
     top: 10px;
     right: 18px;
 
