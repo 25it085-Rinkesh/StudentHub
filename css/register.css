@@ -1,0 +1,228 @@
+/* =========================================================
+   StudentHub - Student Registration Stylesheet
+   css/register.css
+   ========================================================= */
+
+.registration-section {
+    max-width: 760px;
+    margin: 30px auto;
+}
+
+.registration-section > p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#registrationForm {
+    display: grid;
+    gap: 20px;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group label,
+.gender-group legend {
+    font-weight: bold;
+    color: #12344d;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"],
+.form-group select {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #111827;
+    font: inherit;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: 3px solid rgba(0, 90, 156, 0.18);
+    border-color: #005a9c;
+}
+
+.form-group input[aria-invalid="true"],
+.form-group select[aria-invalid="true"] {
+    border-color: #d32f2f;
+    box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.15);
+}
+
+.gender-group {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+
+.gender-group legend {
+    padding: 0 5px;
+}
+
+.radio-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 5px;
+}
+
+.radio-options label,
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.radio-options input,
+.checkbox-label input {
+    width: 18px;
+    height: 18px;
+    accent-color: #005a9c;
+}
+
+.terms-group {
+    margin-top: 2px;
+}
+
+.checkbox-label a {
+    color: #005a9c;
+    font-weight: bold;
+}
+
+.form-error {
+    min-height: 20px;
+    color: #d32f2f;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.password-strength {
+    display: grid;
+    gap: 6px;
+}
+
+.strength-track {
+    width: 100%;
+    height: 8px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #e5e7eb;
+}
+
+.strength-bar {
+    width: 0;
+    height: 100%;
+    border-radius: 20px;
+    transition:
+        width 0.25s ease,
+        background-color 0.25s ease;
+}
+
+#passwordStrength {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.registration-submit {
+    min-height: 48px;
+    margin-top: 5px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #005a9c;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
+}
+
+.registration-submit:hover {
+    background: #004b87;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 75, 135, 0.25);
+}
+
+.registration-submit:active {
+    transform: translateY(0);
+}
+
+.form-success {
+    min-height: 24px;
+    margin: 0;
+    color: #167a3f;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Dark Mode for Registration */
+body.dark .registration-section {
+    color: #f5f5f5;
+}
+
+body.dark .form-group label,
+body.dark .gender-group legend {
+    color: #e5e7eb;
+}
+
+body.dark .form-group input[type="text"],
+body.dark .form-group input[type="email"],
+body.dark .form-group input[type="tel"],
+body.dark .form-group input[type="password"],
+body.dark .form-group select {
+    background: #242831;
+    color: #f5f5f5;
+    border-color: #4b5563;
+}
+
+body.dark .form-group input:focus,
+body.dark .form-group select:focus {
+    border-color: #64b5f6;
+    outline-color: rgba(100, 181, 246, 0.2);
+}
+
+body.dark .gender-group {
+    border-color: #4b5563;
+}
+
+body.dark .strength-track {
+    background: #3c424d;
+}
+
+body.dark .form-success {
+    color: #7ee2a8;
+}
+
+body.dark .checkbox-label a {
+    color: #8ab4f8;
+}
+
+@media (max-width: 600px) {
+    .registration-section {
+        padding: 20px;
+    }
+
+    .radio-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

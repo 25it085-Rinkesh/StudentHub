@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub - Student Login</title>
+
+    <link rel="icon"
+          type="image/png"
+          href="../images/logo.png">
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <link rel="stylesheet"
+          href="../css/login.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         Header
+         ========================= -->
+
+    <header>
+
+        <img src="../images/logo.png"
+             alt="StudentHub Logo">
+
+        <h1>StudentHub</h1>
+
+        <p>Digital Campus Portal</p>
+
+    </header>
+
+
+    <!-- =========================
+         Navigation
+         ========================= -->
+
+    <button id="menuBtn" aria-expanded="false" aria-controls="mainMenu">☰ Menu</button>
+
+    <nav id="mainMenu">
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html" aria-current="page">Login</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         Main Content - Login
+         ========================= -->
+
+    <main>
+
+        <section class="login-section" aria-labelledby="loginHeading">
+
+            <h2 id="loginHeading">Student Login</h2>
+
+            <p>Access your StudentHub student portal and academic dashboard.</p>
+
+            <div id="loginSuccess" class="form-success" role="status" aria-live="polite" style="display:none;"></div>
+
+            <form id="loginForm" novalidate>
+
+                <div class="form-group">
+                    <label for="loginEmail">
+                        Email Address or Username
+                        <span class="required" aria-hidden="true">*</span>
+                    </label>
+
+                    <input type="text"
+                           id="loginEmail"
+                           name="email"
+                           required
+                           placeholder="student@charusat.edu.in"
+                           autocomplete="username">
+
+                    <span id="loginEmailError"
+                          class="form-error"
+                          role="alert"
+                          aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">
+                        Password
+                        <span class="required" aria-hidden="true">*</span>
+                    </label>
+
+                    <input type="password"
+                           id="loginPassword"
+                           name="password"
+                           required
+                           placeholder="Enter your password"
+                           autocomplete="current-password">
+
+                    <span id="loginPasswordError"
+                          class="form-error"
+                          role="alert"
+                          aria-live="polite"></span>
+                </div>
+
+                <button type="submit"
+                        class="login-submit"
+                        id="loginSubmitBtn">
+                    Login
+                </button>
+
+                <p class="login-footer-text">
+                    Don't have an account? <a href="register.html">Register here</a>
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         Footer
+         ========================= -->
+
+    <footer>
+
+        <address>
+
+            StudentHub Portal<br>
+            CHARUSAT University<br>
+            Changa, Anand, Gujarat<br>
+            📧 studenthub@charusat.ac.in<br>
+            ☎ +91-2697-265011
+
+        </address>
+
+        <p>
+            © 2026 StudentHub
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+    <script src="../js/login.js"></script>
+
+</body>
+
+</html>
