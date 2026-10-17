@@ -805,3 +805,51 @@ body.dark .modal-content h2 {
 body.dark footer {
     background: #080a0d;
 }
+
+/* =========================================================
+   Responsive Navigation
+   ========================================================= */
+
+@media (max-width: 768px) {
+    #menuBtn {
+        display: block;
+    }
+
+    #mainMenu {
+        display: none;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    #mainMenu.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #mainMenu ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 2px;
+    }
+
+    #mainMenu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    #mainMenu a {
+        display: block;
+        width: 100%;
+        padding: 10px 16px;
+    }
+}
+
+body.dark #menuBtn {
+    background: #181a1f;
+    color: #64b5f6;
+    border-bottom: 1px solid #2d333b;
+}
+
+body.dark #menuBtn:hover {
+    background: #252a33;
+}

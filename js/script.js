@@ -378,13 +378,21 @@ if (announcementModal) {
 }
 
 
-// Close modal with Escape key
+// Close modal or mobile menu with Escape key
 document.addEventListener(
     "keydown",
     function (event) {
 
         if (event.key === "Escape") {
             closeAnnouncement();
+
+            if (mainMenu && mainMenu.classList.contains("active")) {
+                mainMenu.classList.remove("active");
+                if (menuButton) {
+                    menuButton.setAttribute("aria-expanded", "false");
+                    menuButton.focus();
+                }
+            }
         }
     }
 );
