@@ -7,10 +7,7 @@ const registrationForm = document.getElementById("registrationForm");
 
 if (registrationForm) {
 
-    // =====================================================
     // DOM Elements
-    // =====================================================
-
     const studentName = document.getElementById("studentName");
     const studentEmail = document.getElementById("studentEmail");
     const studentMobile = document.getElementById("studentMobile");
@@ -23,31 +20,20 @@ if (registrationForm) {
     const passwordStrengthBar = document.getElementById("passwordStrengthBar");
     const formSuccess = document.getElementById("formSuccess");
 
-    // =====================================================
     // Regular Expressions
-    // =====================================================
-
-    // Full Name: alphabets, spaces, apostrophes, and hyphens (min 2 characters)
     const nameRegex = /^[A-Za-z]+(?:[ '-][A-Za-z]+)+$/;
-
-    // Email Address: standard email format (user@domain.tld)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-    // Indian Mobile Number: 10 digits starting with 6, 7, 8, or 9
     const mobileRegex = /^[6-9][0-9]{9}$/;
-
-    // Password: at least 8 characters, with at least 1 uppercase, 1 lowercase, 1 number, and 1 special character
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
 
-    // =====================================================
-    // Helper Functions: Error Display & Reset
-    // =====================================================
-
+    // Error Display and Reset
     function showError(input, errorId, message) {
         const errorElement = document.getElementById(errorId);
+
         if (errorElement) {
             errorElement.textContent = message;
         }
+
         if (input) {
             input.setAttribute("aria-invalid", "true");
         }
@@ -55,19 +41,17 @@ if (registrationForm) {
 
     function clearError(input, errorId) {
         const errorElement = document.getElementById(errorId);
+
         if (errorElement) {
             errorElement.textContent = "";
         }
+
         if (input) {
             input.removeAttribute("aria-invalid");
         }
     }
 
-    // =====================================================
-    // Field Validators
-    // =====================================================
-
-    // 1. Full Name
+    // Full Name Validation
     function validateName() {
         const value = studentName.value.trim();
 
@@ -90,7 +74,7 @@ if (registrationForm) {
         return true;
     }
 
-    // 2. Email Address
+    // Email Validation
     function validateEmail() {
         const value = studentEmail.value.trim();
 
@@ -108,7 +92,7 @@ if (registrationForm) {
         return true;
     }
 
-    // 3. Mobile Number
+    // Mobile Number Validation
     function validateMobile() {
         const value = studentMobile.value.trim();
 
@@ -118,7 +102,11 @@ if (registrationForm) {
         }
 
         if (!mobileRegex.test(value)) {
-            showError(studentMobile, "studentMobileError", "Enter a valid 10-digit mobile number starting with 6, 7, 8, or 9.");
+            showError(
+                studentMobile,
+                "studentMobileError",
+                "Enter a valid 10-digit mobile number starting with 6, 7, 8, or 9."
+            );
             return false;
         }
 
@@ -126,20 +114,26 @@ if (registrationForm) {
         return true;
     }
 
-    // 4. Password Strength Meter Calculation
+    // Password Strength
     function getPasswordStrength(password) {
         let score = 0;
+
         if (password.length >= 8) score++;
         if (password.length >= 12) score++;
         if (/[a-z]/.test(password) && /[A-Z]/.test(password)) score++;
         if (/\d/.test(password)) score++;
         if (/[^A-Za-z0-9]/.test(password)) score++;
+
         return score;
     }
 
     function updatePasswordStrength() {
         const password = studentPassword.value;
         const score = getPasswordStrength(password);
+
+        if (!passwordStrength || !passwordStrengthBar) {
+            return;
+        }
 
         if (password === "") {
             passwordStrength.textContent = "Password strength: Not entered";
@@ -163,7 +157,7 @@ if (registrationForm) {
         }
     }
 
-    // 5. Password Validation
+    // Password Validation
     function validatePassword() {
         const value = studentPassword.value;
 
@@ -185,7 +179,7 @@ if (registrationForm) {
         return true;
     }
 
-    // 6. Confirm Password Validation
+    // Confirm Password Validation
     function validateConfirmPassword() {
         const value = confirmPassword.value;
 
@@ -203,7 +197,7 @@ if (registrationForm) {
         return true;
     }
 
-    // 7. Course Validation
+    // Course Validation
     function validateCourse() {
         if (course.value === "") {
             showError(course, "courseError", "Please select a course.");
@@ -214,7 +208,7 @@ if (registrationForm) {
         return true;
     }
 
-    // 8. Year Validation
+    // Year Validation
     function validateYear() {
         if (year.value === "") {
             showError(year, "yearError", "Please select your year.");
@@ -225,41 +219,50 @@ if (registrationForm) {
         return true;
     }
 
-    // 9. Gender Validation
+    // Gender Validation
     function validateGender() {
-        const selectedGender = document.querySelector('input[name="gender"]:checked');
+        const selectedGender = document.querySelector(
+            'input[name="gender"]:checked'
+        );
+
         const errorElement = document.getElementById("genderError");
 
         if (!selectedGender) {
-            if (errorElement) errorElement.textContent = "Please select your gender.";
+            if (errorElement) {
+                errorElement.textContent = "Please select your gender.";
+            }
             return false;
         }
 
-        if (errorElement) errorElement.textContent = "";
+        if (errorElement) {
+            errorElement.textContent = "";
+        }
+
         return true;
     }
 
-    // 10. Terms Acceptance Validation
+    // Terms Validation
     function validateTerms() {
         const errorElement = document.getElementById("termsError");
 
         if (!terms.checked) {
-            if (errorElement) errorElement.textContent = "You must accept the terms and conditions.";
+            if (errorElement) {
+                errorElement.textContent = "You must accept the terms and conditions.";
+            }
             return false;
         }
 
-        if (errorElement) errorElement.textContent = "";
+        if (errorElement) {
+            errorElement.textContent = "";
+        }
+
         return true;
     }
 
-    // =====================================================
-    // Real-Time Event Listeners
-    // =====================================================
-
+    // Real-Time Validation
     studentName.addEventListener("input", validateName);
     studentEmail.addEventListener("input", validateEmail);
 
-    // Mobile Number: Filter numeric characters and enforce 10 digits
     studentMobile.addEventListener("input", function () {
         studentMobile.value = studentMobile.value.replace(/\D/g, "").slice(0, 10);
         validateMobile();
@@ -268,6 +271,7 @@ if (registrationForm) {
     studentPassword.addEventListener("input", function () {
         updatePasswordStrength();
         validatePassword();
+
         if (confirmPassword.value !== "") {
             validateConfirmPassword();
         }
@@ -283,10 +287,7 @@ if (registrationForm) {
 
     terms.addEventListener("change", validateTerms);
 
-    // =====================================================
-    // Form Submission Handling
-    // =====================================================
-
+    // Form Submission
     registrationForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -316,18 +317,30 @@ if (registrationForm) {
             validTerms;
 
         if (!isValid) {
-            // Accessible focus: Shift focus to the first invalid field
-            const firstInvalidInput = registrationForm.querySelector('[aria-invalid="true"]');
+            const firstInvalidInput = registrationForm.querySelector(
+                '[aria-invalid="true"]'
+            );
+
             if (firstInvalidInput && typeof firstInvalidInput.focus === "function") {
                 firstInvalidInput.focus();
             }
+
             return;
         }
 
-        // On successful client-side validation
         if (formSuccess) {
-            formSuccess.textContent = "Registration successful! Welcome to StudentHub.";
+            formSuccess.textContent = "Submitting your registration...";
             formSuccess.style.display = "block";
         }
+
+        const submitButton = document.getElementById("submitBtn");
+
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Submitting...";
+        }
+
+        // Submit to the existing PHP handler without running this listener again.
+        HTMLFormElement.prototype.submit.call(registrationForm);
     });
 }

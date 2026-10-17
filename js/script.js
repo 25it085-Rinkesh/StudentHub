@@ -16,16 +16,20 @@ if (notification && closeButton) {
 // Dark Mode
 // =========================================================
 
+let savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+} else if (savedTheme === "light") {
+    document.body.classList.remove("dark");
+}
+
 let themeButton = document.getElementById("themeBtn");
 
 if (themeButton) {
-    let savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark");
+    if (document.body.classList.contains("dark")) {
         themeButton.innerHTML = "Light Mode";
     } else {
-        document.body.classList.remove("dark");
         themeButton.innerHTML = "Dark Mode";
     }
 
