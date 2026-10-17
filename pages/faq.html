@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub - FAQs</title>
+
+    <link rel="icon"
+          type="image/png"
+          href="../images/logo.png">
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+    <link rel="stylesheet"
+          href="../css/faq.css">
+
+</head>
+
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="logo">
+
+            <img src="../images/logo.png"
+                 alt="StudentHub Logo">
+
+            <h1>StudentHub</h1>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="events.html">Events</a>
+            <a href="student.html">Students</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- FAQ Section -->
+
+    <main>
+
+        <section id="faqSection"
+                 class="events-section">
+
+            <h2>Frequently Asked Questions</h2>
+
+
+            <!-- Search -->
+
+            <label for="faqSearch">
+                Search Questions:
+            </label>
+
+            <input type="text"
+                   id="faqSearch"
+                   placeholder="Search by question">
+
+
+            <br><br>
+
+
+            <!-- Sorting -->
+
+            <label for="faqSort">
+                Sort FAQs:
+            </label>
+
+            <select id="faqSort">
+
+                <option value="default">
+                    Default Order
+                </option>
+
+                <option value="az">
+                    A to Z
+                </option>
+
+                <option value="za">
+                    Z to A
+                </option>
+
+            </select>
+
+
+            <!-- FAQ List -->
+
+            <div id="faqList">
+                Loading FAQs...
+            </div>
+
+
+            <!-- Pagination -->
+
+            <div id="faqPagination">
+
+                <button id="faqPrev">
+                    Previous
+                </button>
+
+                <span id="faqPageNumber">
+                    Page 1
+                </span>
+
+                <button id="faqNext">
+                    Next
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 StudentHub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="../js/script.js"></script>
+    <script src="../js/faq.js"></script>
+
+</body>
+
+</html>

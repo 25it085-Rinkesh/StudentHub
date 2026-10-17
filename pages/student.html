@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>StudentHub - Student Directory</title>
+
+    <!-- Favicon -->
+    <link rel="icon"
+          type="image/png"
+          href="../images/logo.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet"
+          href="../css/style.css">
+    <link rel="stylesheet"
+          href="../css/student.css">
+
+</head>
+
+
+<body>
+
+    <!-- ========================= -->
+    <!-- Header Section -->
+    <!-- ========================= -->
+
+    <header>
+
+        <img src="../images/logo.png"
+             alt="StudentHub Logo">
+
+        <h1>StudentHub</h1>
+
+        <p style="text-align: center;">
+            Digital Campus Portal
+        </p>
+
+    </header>
+
+
+    <!-- ========================= -->
+    <!-- Navigation Menu -->
+    <!-- ========================= -->
+
+    <button id="menuBtn">☰ Menu</button>
+
+    <nav id="mainMenu">
+
+        <ul>
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li><a href="register.html">Register</a></li>
+
+            <li><a href="login.html">Login</a></li>
+
+            <li><a href="dashboard.html">Dashboard</a></li>
+
+            <li><a href="events.html">Events</a></li>
+
+            <li><a href="student.html">Students</a></li>
+
+            <li><a href="profile.html">Profile</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+            <li><a href="admin.html">Admin</a></li>
+
+            <li><a href="faq.html">FAQ</a></li>
+
+            <li><a href="feedback.html">Feedback</a></li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ========================= -->
+    <!-- Main Content -->
+    <!-- ========================= -->
+
+    <main>
+
+        <!-- Practical 6 - JSON Students Directory -->
+
+        <section id="studentSection" class="events-section">
+
+            <h2>Student Directory</h2>
+
+            <!-- Search -->
+            <label for="studentSearch">Search Students:</label>
+            <input type="text"
+                   id="studentSearch"
+                   placeholder="Search by student name or email">
+
+            <br><br>
+
+            <!-- Course Filter -->
+            <label for="courseFilter">
+                Filter by Course:
+            </label>
+            <select id="courseFilter">
+                <option value="all">All Courses</option>
+                <option value="B.Tech IT">B.Tech IT</option>
+                <option value="B.Tech CSE">B.Tech CSE</option>
+                <option value="BCA">BCA</option>
+            </select>
+
+            <!-- Year Filter -->
+            <label for="yearFilter">
+                Filter by Year:
+            </label>
+            <select id="yearFilter">
+                <option value="all">All Years</option>
+                <option value="1">Year 1</option>
+                <option value="2">Year 2</option>
+                <option value="3">Year 3</option>
+                <option value="4">Year 4</option>
+            </select>
+
+            <br><br>
+
+            <!-- Sort -->
+            <label for="studentSort">
+                Sort Students:
+            </label>
+            <select id="studentSort">
+                <option value="default">Default Order</option>
+                <option value="nameAsc">Name (A to Z)</option>
+                <option value="nameDesc">Name (Z to A)</option>
+                <option value="yearAsc">Year (Ascending)</option>
+                <option value="yearDesc">Year (Descending)</option>
+            </select>
+
+            <!-- Loading & Error Messages -->
+            <div id="studentLoading">
+                Loading students...
+            </div>
+
+            <div id="studentError"></div>
+
+            <!-- Student Cards List -->
+            <div id="studentList"></div>
+
+            <br>
+
+            <!-- Pagination -->
+            <div id="studentPagination">
+                <button id="studentPrev">
+                    Previous
+                </button>
+                <span id="studentPageNumber">
+                    Page 1
+                </span>
+                <button id="studentNext">
+                    Next
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================= -->
+    <!-- Footer -->
+    <!-- ========================= -->
+
+    <footer>
+
+        <address>
+
+            ----------------------------------
+
+            <br>
+
+            StudentHub Portal
+
+            <br>
+
+            CHARUSAT University
+
+            <br>
+
+            Changa, Anand, Gujarat
+
+            <br>
+
+            📧 studenthub@charusat.ac.in
+
+            <br>
+
+            ☎ +91-2697-265011
+
+            <br>
+
+            ----------------------------------
+
+            <br>
+
+            © 2026 StudentHub
+
+        </address>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="../js/script.js"></script>
+    <script src="../js/student.js"></script>
+
+</body>
+
+</html>

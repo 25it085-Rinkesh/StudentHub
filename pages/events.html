@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>StudentHub - Events</title>
+
+    <!-- Favicon -->
+    <link rel="icon"
+          type="image/png"
+          href="../images/logo.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet"
+          href="../css/style.css">
+    <link rel="stylesheet"
+          href="../css/events.css">
+
+</head>
+
+
+<body>
+
+    <!-- ========================= -->
+    <!-- Header Section -->
+    <!-- ========================= -->
+
+    <header>
+
+        <img src="../images/logo.png"
+             alt="StudentHub Logo">
+
+        <h1>StudentHub</h1>
+
+        <p style="text-align: center;">
+            Digital Campus Portal
+        </p>
+
+    </header>
+
+
+    <!-- ========================= -->
+    <!-- Navigation Menu -->
+    <!-- ========================= -->
+
+    <button id="menuBtn">☰ Menu</button>
+
+    <nav id="mainMenu">
+
+        <ul>
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li><a href="register.html">Register</a></li>
+
+            <li><a href="login.html">Login</a></li>
+
+            <li><a href="dashboard.html">Dashboard</a></li>
+
+            <li><a href="events.html">Events</a></li>
+
+            <li><a href="student.html">Students</a></li>
+
+            <li><a href="profile.html">Profile</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+            <li><a href="admin.html">Admin</a></li>
+
+            <li><a href="faq.html">FAQ</a></li>
+
+            <li><a href="feedback.html">Feedback</a></li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ========================= -->
+    <!-- Main Content -->
+    <!-- ========================= -->
+
+    <main>
+
+        <!-- Practical 6 - JSON Events -->
+
+        <section id="jsonEvents" class="events-section">
+
+            <h2>Upcoming Events</h2>
+            <label for="searchInput">Search Events:</label>
+
+<input type="text"
+       id="searchInput"
+       placeholder="Search by event name">
+
+       <br><br>
+
+<label for="categoryFilter">
+    Filter by Category:
+</label>
+
+<select id="categoryFilter">
+
+    <option value="all">All Categories</option>
+
+    <option value="Technical">Technical</option>
+
+    <option value="Workshop">Workshop</option>
+
+    <option value="Sports">Sports</option>
+
+    <option value="Cultural">Cultural</option>
+
+    <option value="Career">Career</option>
+
+</select>
+
+<br><br>
+
+<label for="sortEvents">
+    Sort Events:
+</label>
+
+<select id="sortEvents">
+
+    <option value="default">Default Order</option>
+
+    <option value="az">A to Z</option>
+
+    <option value="za">Z to A</option>
+
+    <option value="dateAsc">Earliest Date First</option>
+
+    <option value="dateDesc">Latest Date First</option>
+
+</select>
+
+            <div id="loadingMessage">
+                Loading events...
+            </div>
+
+            <div id="errorMessage"></div>
+
+            <div id="eventList"></div>
+            <br>
+
+<div id="pagination">
+
+    <button id="prevPage">
+        Previous
+    </button>
+
+    <span id="pageNumber">
+        Page 1
+    </span>
+
+    <button id="nextPage">
+        Next
+    </button>
+
+</div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================= -->
+    <!-- Footer -->
+    <!-- ========================= -->
+
+    <footer>
+
+        <address>
+
+            ----------------------------------
+
+            <br>
+
+            StudentHub Portal
+
+            <br>
+
+            CHARUSAT University
+
+            <br>
+
+            Changa, Anand, Gujarat
+
+            <br>
+
+            📧 studenthub@charusat.ac.in
+
+            <br>
+
+            ☎ +91-2697-265011
+
+            <br>
+
+            ----------------------------------
+
+            <br>
+
+            © 2026 StudentHub
+
+        </address>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="../js/script.js"></script>
+    <script src="../js/events.js"></script>
+
+</body>
+
+</html>

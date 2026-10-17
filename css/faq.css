@@ -1,0 +1,205 @@
+/* =========================================================
+   StudentHub - FAQ Page Stylesheet (Practical 06)
+   File: css/faq.css
+   ========================================================= */
+
+.events-section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.events-section h2 {
+    color: #003b6f;
+    margin-top: 0;
+    margin-bottom: 22px;
+    font-size: 26px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.events-section label {
+    display: inline-block;
+    font-weight: 600;
+    color: #2d3748;
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+#faqSearch,
+#faqSort {
+    padding: 9px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #1e293b;
+    background-color: #f8fafc;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    margin-right: 15px;
+    margin-bottom: 8px;
+}
+
+#faqSearch {
+    min-width: 280px;
+}
+
+#faqSearch:focus,
+#faqSort:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.15);
+    background-color: #ffffff;
+}
+
+/* FAQ List */
+#faqList {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.faq-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-color: #cbd5e1;
+}
+
+.faq-card h3 {
+    margin: 0 0 8px 0;
+    color: #003b6f;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.faq-card p {
+    margin: 0;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* FAQ Pagination */
+#faqPagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+#faqPagination button {
+    padding: 8px 18px;
+    background-color: #003b6f;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#faqPagination button:hover:not(:disabled) {
+    background-color: #00274d;
+    transform: translateY(-1px);
+}
+
+#faqPagination button:disabled {
+    background-color: #cbd5e1;
+    color: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#faqPageNumber {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    padding: 6px 12px;
+    background: #f1f5f9;
+    border-radius: 6px;
+}
+
+/* Dark Mode Integration */
+body.dark .events-section {
+    background: #1b1e24;
+    color: #f5f5f5;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .events-section h2 {
+    color: #64b5f6;
+    border-bottom-color: #2d333b;
+}
+
+body.dark .events-section label {
+    color: #e2e8f0;
+}
+
+body.dark #faqSearch,
+body.dark #faqSort {
+    background-color: #24272e;
+    color: #f5f5f5;
+    border-color: #414650;
+}
+
+body.dark #faqSearch:focus,
+body.dark #faqSort:focus {
+    border-color: #64b5f6;
+    box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.2);
+}
+
+body.dark .faq-card {
+    background: #24272e;
+    border-color: #374151;
+}
+
+body.dark .faq-card h3 {
+    color: #8ab4f8;
+}
+
+body.dark .faq-card p {
+    color: #d1d5db;
+}
+
+body.dark #faqPagination {
+    border-top-color: #374151;
+}
+
+body.dark #faqPagination button {
+    background-color: #252a33;
+    color: #9dccff;
+    border: 1px solid #4d9bd6;
+}
+
+body.dark #faqPagination button:hover:not(:disabled) {
+    background-color: #4d9bd6;
+    color: #101010;
+}
+
+body.dark #faqPagination button:disabled {
+    background-color: #1a1d23;
+    color: #6b7280;
+    border-color: #374151;
+}
+
+body.dark #faqPageNumber {
+    background: #252a33;
+    color: #e2e8f0;
+}
